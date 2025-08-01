@@ -224,7 +224,7 @@ p {
     position: relative;
     height: 650px; /* Increased height */
     /* Combined background properties for a clean, blended look */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('school.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/imge/school.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -507,7 +507,7 @@ p {
 
 /* --- Call to Action Section (Bottom) --- */
 .cta-bottom-section {
-    background-image: url('school2.jpg');
+    background-image: url('/imge/school2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
