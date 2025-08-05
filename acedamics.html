@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Pranjal Devay Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .academics-container {
+            width: 90%;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .academics-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .results-table th {
+            background: #3498db;
+            color: white;
+        }
+        .topper-section {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .topper-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #27ae60;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .topper-card h4 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .topper-card p {
+            margin: 5px 0;
+        }
+        .add-student-form {
+            margin-top: 20px;
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .add-student-form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .add-student-form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .add-student-form button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .add-student-form button:hover {
+            background: #219150;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="academics-container">
+        <h2>📚 Academic Results - Last Session</h2>
+
+        <!-- Last Result Table -->
+        <table class="results-table" id="resultsTable">
+            <tr>
+                <th>Session</th>
+                <th>Roll No</th>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Percentage (%)</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>2023-24</td>
+                <td>101</td>
+                <td>Rahul Sharma</td>
+                <td>10th</td>
+                <td>92</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td>2023-24</td>
+                <td>102</td>
+                <td>Priya Mehta</td>
+                <td>10th</td>
+                <td>89</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>2023-24</td>
+                <td>103</td>
+                <td>Rohit Verma</td>
+                <td>9th</td>
+                <td>85</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>2023-24</td>
+                <td>104</td>
+                <td>Anjali Singh</td>
+                <td>8th</td>
+                <td>80</td>
+                <td>B+</td>
+            </tr>
+        </table>
+
+        <button class="download-btn" onclick="downloadResults()">⬇️ Download Results (.csv)</button>
+
+        <!-- Form to Add More Students -->
+        <div class="add-student-form">
+            <h3>Add New Student Result</h3>
+
+            <label>Session:</label>
+            <input type="text" id="sessionName" placeholder="Enter session (e.g., 2024-25)" required>
+
+            <label>Roll No:</label>
+            <input type="text" id="rollNo" placeholder="Enter roll number" required>
+            
+            <label>Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter full name" required>
+
+            <label>Class:</label>
+            <input type="text" id="className" placeholder="Enter class" required>
+
+            <label>Percentage (%):</label>
+            <input type="number" id="percentage" placeholder="Enter percentage" required>
+
+            <label>Grade:</label>
+            <input type="text" id="grade" placeholder="Enter grade" required>
+
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <!-- Top Record Holders -->
+        <div class="topper-section" id="topperSection">
+            <h3>🏆 Top Record Holders</h3>
+
+            <div class="topper-card" data-name="Rahul Sharma">
+                <h4>Rahul Sharma</h4>
+                <p>Class: 10th</p>
+                <p>Percentage: 92%</p>
+                <p>Achievement: School Topper 2024</p>
+            </div

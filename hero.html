@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - Pranjal Devay Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .img{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+        .hero-section {
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-section h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .hero-btn {
+            padding: 12px 25px;
+            background: #fff;
+            color: #2c3e50;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            margin: 0 auto;
+        }
+        .hero-btn:hover {
+            background: #f1f1f1;
+        }
+        .fee-details {
+            display: none;
+            margin: 30px auto;
+            width: 95%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .fee-details h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .fee-table th, .fee-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .fee-table th {
+            background: #3498db;
+            color: white;
+        }
+        .total-col {
+            background: #f9f9f9;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="imge/logo.jpg" class="img"
+        >
+        <h1>Welcome to Pranjal Devay Academy</h1>
+        <p>Shaping Future Leaders Through Education</p>
+        <button class="hero-btn" onclick="showFeeDetails()">Get Fee Datails</button>
+    </div>
+
+    <div class="fee-details" id="feeDetails">
+        <h3>💰 Fee Structure (Class 1 - 10)</h3>
+        <table class="fee-table">
+            <tr>
+                <th>Class</th>
+                <th>Tuition Fee (₹/Month)</th>
+                <th>Hostel Fee (₹/Month)</th>
+                <th>Transport Fee (₹/Month)</th>
+                <th>Total Annual Fee (₹)</th>
+            </tr>
+            <tr><td>1</td><td>1000</td><td>3000</td><td>800</td><td class="total-col">57,600</td></tr>
+            <tr><td>2</td><td>1200</td><td>3200</td><td>900</td><td class="total-col">61,200</td></tr>
+            <tr><td>3</td><td>1300</td><td>3300</td><td>1000</td><td class="total-col">66,000</td></tr>
+            <tr><td>4</td><td>1400</td><td>3400</td><td>1100</td><td class="total-col">70,800</td></tr>
+            <tr><td>5</td><td>1500</td><td>3500</td><td>1200</td><td class="total-col">75,600</td></tr>
+            <tr><td>6</td><td>1600</td><td>3600</td><td>1300</td><td class="total-col">80,400</td></tr>
+            <tr><td>7</td><td>1700</td><td>3800</td><td>1400</td><td class="total-col">85,200</td></tr>
+            <tr><td>8</td><td>1800</td><td>4000</td><td>1500</td><td class="total-col">90,600</td></tr>
+            <tr><td>9</td><td>2000</td><td>4200</td><td>1600</td><td class="total-col">94,800</td></tr>
+            <tr><td>10</td><td>2500</td><td>4500</td><td>1800</td><td class="total-col">104,400</td></tr>
+        </table>
+    </div>
+
+    <script>
+        function showFeeDetails() {
+            document.getElementById("feeDetails").style.display = "block";
+            window.scrollTo({
+                top: document.getElementById("feeDetails").offsetTop - 50,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
+</html>

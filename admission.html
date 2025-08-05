@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Pranjal Devay Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admission-container {
+            width: 80%;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .admission-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .admission-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .admission-container ul li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            font-size: 16px;
+        }
+        .btn-apply {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-apply:hover {
+            background: #2980b9;
+        }
+
+        .form-container {
+            display: none;
+            margin-top: 20px;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .form-container input, 
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-container button:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admission-container">
+        <h2>Admission Process</h2>
+        <ul>
+            <li>1️⃣ Fill out the online admission form or visit our school office.</li>
+            <li>2️⃣ Submit required documents (Birth Certificate, Previous Report Card, ID Proof).</li>
+            <li>3️⃣ Attend a short interaction session or entrance test (if applicable).</li>
+            <li>4️⃣ Confirmation of admission will be communicated via email or phone.</li>
+            <li>5️⃣ Pay the admission and tuition fees to secure your seat.</li>
+        </ul>
+
+        <button class="btn-apply" onclick="showForm()">Apply Now</button>
+
+        <!-- Hidden Form -->
+        <div class="form-container" id="admissionForm">
+            <h3>Student Admission Form</h3>
+            <form id="saveForm">
+                <label>Student Name:</label>
+                <input type="text" id="studentName" placeholder="Enter full name" required>
+
+                <label>Father's Name:</label>
+                <input type="text" id="fatherName" placeholder="Enter father's name" required>
+
+                <label>Date of Birth:</label>
+                <input type="date" id="dob" required>
+
+                <label>Current Class:</label>
+                <input type="text" id="currentClass" placeholder="Enter current class" required>
+
+                <label>Last School Name:</label>
+                <input type="text" id="lastSchool" placeholder="Enter last school name" required>
+
+                <label>Address:</label>
+                <textarea id="address" rows="3" placeholder="Enter address" required></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById("admissionForm").style.display = "block";
+        }
+
+        document.getElementById("saveForm").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let name = document.getElementById("studentName").value.trim().replace(/\s+/g, "_");
+            if(name === "") name = "Unknown_Student";
+
+            let data = 
+                "Student Name: " + document.getElementById("studentName").value + "\n" +
+                "Father's Name: " + document.getElementById("fatherName").value + "\n" +
+                "Date of Birth: " + document.getElementById("dob").value + "\n" +
+                "Current Class: " + document.getElementById("currentClass").value + "\n" +
+                "Last School: " + document.getElementById("lastSchool").value + "\n" +
+                "Address: " + document.getElementById("address").value + "\n\n";
+
+            let blob = new Blob([data], { type: "text/plain" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = name + "_Admission.txt";
+            link.click();
+
+            alert("Application saved to file: " + name + "_Admission.txt");
+            document.getElementById("saveForm").reset();
+        });
+    </script>
+
+</body>
+</html>
